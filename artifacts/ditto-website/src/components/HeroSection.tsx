@@ -1,72 +1,81 @@
 import { motion } from "framer-motion";
-import { BlobFace } from "./BlobFace";
+import { ChevronDown } from "lucide-react";
+import { Robot } from "./Robot";
 
 export function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20">
-      {/* Background ambient light */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/20 rounded-full blur-[120px] pointer-events-none" />
+    <section className="relative min-h-screen flex flex-col justify-center pt-20 overflow-hidden">
+      {/* Background ambient elements */}
+      <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-ping opacity-20" />
+      <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary rounded-full animate-ping opacity-20" style={{ animationDelay: '1s' }} />
+      <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-primary rounded-full animate-ping opacity-20" style={{ animationDelay: '2s' }} />
 
-      <div className="relative z-10 flex flex-col items-center max-w-5xl mx-auto px-6 text-center">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center z-10">
         
-        {/* Main Animated Blob */}
-        <motion.div
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          transition={{ type: "spring", damping: 12, stiffness: 100, delay: 0.2 }}
-          className="relative mb-12 group cursor-pointer"
-        >
-          <motion.div
-            animate={{
-              borderRadius: [
-                "40% 60% 70% 30% / 40% 50% 60% 50%",
-                "60% 40% 30% 70% / 60% 30% 70% 40%",
-                "50% 50% 60% 40% / 40% 60% 50% 50%",
-                "40% 60% 70% 30% / 40% 50% 60% 50%"
-              ],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="w-64 h-64 md:w-80 md:h-80 bg-gradient-to-br from-primary via-[#C084FC] to-accent shadow-2xl shadow-primary/40 group-hover:scale-105 transition-transform duration-300"
-          >
-            {/* Glossy highlight effect */}
-            <div className="absolute top-8 left-8 w-24 h-12 bg-white/30 rounded-full blur-md rotate-[-30deg]" />
-            <div className="absolute bottom-8 right-12 w-16 h-8 bg-black/10 rounded-full blur-md" />
-            
-            <BlobFace />
-          </motion.div>
-        </motion.div>
-
-        {/* Text Content */}
-        <motion.div
-          initial={{ y: 40, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          <div className="inline-block px-4 py-1.5 mb-6 rounded-full bg-secondary/50 border border-primary/20 backdrop-blur-sm text-primary font-semibold text-sm uppercase tracking-wider">
-            Pokémon #132
-          </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-primary/60 mb-6 drop-shadow-sm">
-            Meet the Master of Disguise.
-          </h1>
-          <p className="text-lg md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            It can freely recombine its own cellular structure to transform into other life-forms. Discover the magic of Ditto.
-          </p>
-        </motion.div>
-
-        {/* Scroll indicator */}
+        {/* Left Content */}
         <motion.div 
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col gap-6"
         >
-          <span className="text-xs uppercase tracking-widest font-semibold">Scroll</span>
-          <div className="w-0.5 h-12 bg-gradient-to-b from-primary to-transparent rounded-full" />
+          <div className="flex flex-col gap-2">
+            <h1 className="font-heading text-6xl md:text-8xl font-black text-primary leading-none tracking-tight drop-shadow-[0_0_15px_rgba(250,204,21,0.3)]">
+              ATHARVA
+            </h1>
+            <h2 className="font-heading text-5xl md:text-7xl font-bold text-primary/90 leading-none tracking-tight">
+              PATIL
+            </h2>
+          </div>
+          
+          <h3 className="text-xl md:text-2xl font-light text-primary/80 tracking-widest uppercase">
+            Developer <span className="text-foreground/30">|</span> Creative <span className="text-foreground/30">|</span> Innovator
+          </h3>
+          
+          <p className="text-muted-foreground text-lg max-w-lg leading-relaxed">
+            Building beautiful and interactive web experiences with modern technologies. Transforming ideas into digital reality.
+          </p>
+          
+          <div className="flex flex-wrap gap-4 mt-4">
+            <a 
+              href="#projects" 
+              className="px-8 py-4 bg-primary text-primary-foreground font-semibold rounded-xl shadow-[0_0_20px_rgba(250,204,21,0.3)] hover:shadow-[0_0_30px_rgba(250,204,21,0.5)] hover:-translate-y-1 transition-all duration-300"
+            >
+              View My Work
+            </a>
+            <a 
+              href="#contact" 
+              className="px-8 py-4 bg-transparent border-2 border-primary text-primary font-semibold rounded-xl hover:bg-primary/10 hover:-translate-y-1 transition-all duration-300"
+            >
+              Download CV
+            </a>
+          </div>
+        </motion.div>
+
+        {/* Right Content - Robot */}
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+          className="hidden lg:flex justify-center items-center"
+        >
+          <Robot />
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.a 
+        href="#about"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-primary/60 hover:text-primary transition-colors cursor-pointer"
+      >
+        <span className="text-sm font-medium tracking-widest uppercase">Scroll</span>
+        <div className="w-10 h-10 border-2 border-current rounded-full flex items-center justify-center animate-bounce">
+          <ChevronDown className="w-5 h-5" />
+        </div>
+      </motion.a>
     </section>
   );
 }

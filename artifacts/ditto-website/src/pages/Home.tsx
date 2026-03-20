@@ -1,30 +1,24 @@
+import { ScrollProgress } from "@/components/ScrollProgress";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
-import { TransformSection } from "@/components/TransformSection";
-import { AbilitiesSection } from "@/components/AbilitiesSection";
-import { StatsSection } from "@/components/StatsSection";
-import { InteractiveFun } from "@/components/InteractiveFun";
+import { AboutSection } from "@/components/AboutSection";
+import { SkillsSection } from "@/components/SkillsSection";
+import { ProjectsSection } from "@/components/ProjectsSection";
+import { ContactSection } from "@/components/ContactSection";
 import { Footer } from "@/components/Footer";
 
 export function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground relative">
-      {/* Texture Overlay */}
-      <div 
-        className="fixed inset-0 z-0 opacity-20 pointer-events-none mix-blend-screen"
-        style={{
-          backgroundImage: `url(${import.meta.env.BASE_URL}images/space-bg.png)`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      />
-      
+    <main className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+      <ScrollProgress />
       <Navbar />
+      
       <HeroSection />
-      <TransformSection />
-      <AbilitiesSection />
-      <StatsSection />
-      <InteractiveFun />
+      <AboutSection />
+      <SkillsSection />
+      <ProjectsSection />
+      <ContactSection />
+      
       <Footer />
     </main>
   );
