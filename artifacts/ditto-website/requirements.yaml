@@ -1,0 +1,15 @@
+packages:
+  "framer-motion": "Core animation library for spring physics, scroll reveals, and blob morphing"
+  "lucide-react": "Beautiful icons for the abilities and stats sections"
+  "clsx": "Utility for conditionally joining classNames"
+  "tailwind-merge": "Utility to merge tailwind classes safely"
+
+images:
+  - path: "artifacts/ditto-website/public/images/space-bg.png"
+    description: "Abstract deep dark purple and pink space nebula texture, very subtle and dark, suitable for a website background to add depth"
+    aspect_ratio: "16:9"
+
+notes:
+  - This is a purely frontend interactive experience based on Framer Motion.
+  - No backend API calls are implemented or needed as per instructions.
+  - The application is a single-page scrolling experience.
