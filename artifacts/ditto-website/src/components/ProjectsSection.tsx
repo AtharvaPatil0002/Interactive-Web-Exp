@@ -19,13 +19,13 @@ const projects = [
     title: "E-commerce UI",
     description: "Modern e-commerce platform with sleek design, smooth checkout flow, and responsive layout.",
     tags: ["Next.js", "Tailwind", "Stripe"],
-    image: "https://cdn.pixabay.com/photo/2020/01/27/09/54/weather-4795924_1280.jpg",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
   },
   {
     title: "Weather App",
     description: "Real-time weather forecasting application with beautiful UI and accurate meteorological data.",
     tags: ["React", "API", "CSS"],
-    image: "https://images.unsplash.com/photo-1601134467661-3d775b999c0b?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&q=80",
   },
 ];
 
