@@ -25,7 +25,7 @@ const projects = [
     title: "Weather App",
     description: "Real-time weather forecasting application with beautiful UI and accurate meteorological data.",
     tags: ["React", "API", "CSS"],
-    image: "https://images.unsplash.com/photo-1504608524841-42584120d693?w=800&q=80",
+    image: "https://images.unsplash.com/photo-1601134467661-3d775b999c0b?w=800&q=80",
   },
 ];
 
