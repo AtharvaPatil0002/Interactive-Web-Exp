@@ -3,9 +3,9 @@ import { Github, Linkedin, Instagram, Send, CheckCircle, AlertCircle } from "luc
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS_SERVICE_ID = "service_sm5bxx1";
-const EMAILJS_TEMPLATE_ID = "template_hsvm0ce";
-const EMAILJS_PUBLIC_KEY = "xtnj-whw0xpWIeGwd";
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export function ContactSection() {
   const [formState, setFormState] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
